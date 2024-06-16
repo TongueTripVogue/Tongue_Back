@@ -10,6 +10,13 @@ LLM을 활용한 여행 계획부터 기록, 공유까지 전반을 아우르는
 - [Docker image, Github Actions CI/CD 구축, EC2 배포](https://github.com/dahyunko/Tongue/edit/master/README.md#1-docker-github-cicd-%EA%B5%AC%EC%B6%95-)
 - [Spring Security & jwt 사용자 인증, 인가](https://github.com/dahyunko/Tongue/edit/master/README.md#2-spring-security--jwt-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%EC%A6%9D-%EC%9D%B8%EA%B0%80-)
 
+<div align="center">
+   <img src="https://github.com/TongueTripVogue/Tongue_Front/assets/101400650/3e934931-9925-4c00-8963-e4309671611d"  width="600" >
+      <br />
+      <a href="https://youtu.be/30pMGAV7OHY?si=3gT0Z4cGARxQhAgo">Youtube 서비스 시연 영상</a>
+</div>
+<br />
+
 ## Using Stacks <br/>
 ```git
 📌 Springboot, MyBatis, Maven, MYSQL, Docker, Github Actions
