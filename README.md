@@ -87,3 +87,33 @@ SpringBoot Maven 프로젝트를 docker 이미지로 DockerHub에 배포한 후 
   
 - **결과 화면**
   ![jwt 확인](https://github.com/TongueTripVogue/Tongue_Back/assets/101400650/dde07273-6dfc-4b04-b086-c58f3b8740fd)
+
+
+## 3. Comment 기능 <br/>
+```git
+📌 Spring, MySQL
+```
+**Trouble Shooting**
+  > Magazine 삭제시 comment가 존재하면 종속 관계에 있는 comment를 먼저 삭제하지 않으면 에러 발생하며 게시글 삭제도 안 됨
+
+**Solution**
+  > Magazine 삭제시 해당 Magazine ID가진 comment들 Comment DB에서 모두 검색 후 삭제 진행
+
+**Insight**
+  > DB 설계와 API 설계시 종속 관계에 있는 데이터 명확이 확인하고 데이터 생성, 수정, 삭제 시 반드시 순서를 지켜서 구현해야 한다.
+
+**구현코드**
+- Controller
+  ```
+  @GetMapping("/delete/{magazineId}")
+  public ResponseEntity<?> deleteMagazine(@PathVariable("magazineId") String magazineId){
+     try{
+         magazineService.deleteCommentAll(magazineId);
+         magazineService.deleteMagazineDetail(magazineId);
+         magazineService.deleteMagazine(magazineId);
+         return new ResponseEntity<Void>(HttpStatus.OK);
+     }catch (Exception e){
+         return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+     }
+ }
+ ```
