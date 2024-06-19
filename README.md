@@ -104,16 +104,16 @@ SpringBoot Maven 프로젝트를 docker 이미지로 DockerHub에 배포한 후 
 
 **구현코드**
 - Controller
-  ```
-  @GetMapping("/delete/{magazineId}")
-  public ResponseEntity<?> deleteMagazine(@PathVariable("magazineId") String magazineId){
-     try{
-         magazineService.deleteCommentAll(magazineId);
-         magazineService.deleteMagazineDetail(magazineId);
-         magazineService.deleteMagazine(magazineId);
-         return new ResponseEntity<Void>(HttpStatus.OK);
-     }catch (Exception e){
-         return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-     }
- }
+  ```JAVA
+     @GetMapping("/delete/{magazineId}")
+     public ResponseEntity<?> deleteMagazine(@PathVariable("magazineId") String magazineId){
+        try{
+            magazineService.deleteCommentAll(magazineId);
+            magazineService.deleteMagazineDetail(magazineId);
+            magazineService.deleteMagazine(magazineId);
+            return new ResponseEntity<Void>(HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
  ```
