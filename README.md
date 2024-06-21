@@ -116,4 +116,4 @@ SpringBoot Maven 프로젝트를 docker 이미지로 DockerHub에 배포한 후 
             return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
- ```
+  ```
